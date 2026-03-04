@@ -44,16 +44,16 @@ Input Image (32×32×3)
 ## Project Structure
 
 ```
-├── src/                    # Production code
-│   ├── config.py           # Model and training configuration
-│   ├── embeddings.py       # Patch and positional embeddings
-│   ├── normalization.py    # RMSNorm and LayerNorm
-│   ├── attention.py        # MLA and standard attention
-│   ├── moe.py              # Mixture of Experts
-│   ├── transformer.py      # Full ViT model
-│   └── data.py             # Data loading and augmentation
+├── src/                    
+│   ├── config.py           
+│   ├── embeddings.py       
+│   ├── normalization.py    
+│   ├── attention.py        
+│   ├── moe.py              
+│   ├── transformer.py      
+│   └── data.py             
 │
-├── explained/              # Educational versions with detailed comments
+├── explained/              
 │   ├── config_explained.py
 │   ├── embeddings_explained.py
 │   ├── normalization_explained.py
@@ -61,10 +61,10 @@ Input Image (32×32×3)
 │   ├── moe_explained.py
 │   └── transformer_explained.py
 │
-├── train.py                # Training script
-├── evaluate.py             # Evaluation script
-├── main.py                 # Entry point
-└── checkpoints/            # Saved models
+├── train.py               
+├── evaluate.py            
+├── main.py                
+└── checkpoints/           
 ```
 
 ## Installation
