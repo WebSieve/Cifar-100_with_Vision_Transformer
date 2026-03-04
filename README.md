@@ -52,15 +52,6 @@ Input Image (32×32×3)
 │   ├── moe.py              
 │   ├── transformer.py      
 │   └── data.py             
-│
-├── explained/              
-│   ├── config_explained.py
-│   ├── embeddings_explained.py
-│   ├── normalization_explained.py
-│   ├── attention_explained.py
-│   ├── moe_explained.py
-│   └── transformer_explained.py
-│
 ├── train.py               
 ├── evaluate.py            
 ├── main.py                
