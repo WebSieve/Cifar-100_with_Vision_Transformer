@@ -71,7 +71,7 @@ Input Image (32×32×3)
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/WebSieve/Cifar-100_with_Vision_Transformer.git
 cd Cifar-100_with_transformers
 
 # Install dependencies
