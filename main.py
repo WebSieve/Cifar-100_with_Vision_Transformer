@@ -1,5 +1,8 @@
 import sys
 import torch
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 def print_model_info():

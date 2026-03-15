@@ -4,6 +4,7 @@ import math
 import random
 import argparse
 from pathlib import Path
+import warnings
 
 import torch
 import torch.nn as nn
@@ -12,6 +13,8 @@ from torch.cuda.amp import GradScaler, autocast
 from src.config import ModelConfig, TrainingConfig
 from src.transformer import VisionTransformer
 from src.data import get_cifar100_loaders, Mixup, CutMix
+
+warnings.filterwarnings("ignore")
 
 
 def set_seed(seed: int):

@@ -62,6 +62,7 @@ class TrainingConfig:
     weight_decay: float = 0.05
     warmup_epochs: int = 10
     min_lr: float = 1e-5
+    aux_loss_coef: float = 0.01
 
     label_smoothing: float = 0.1
     mixup_alpha: float = 0.8
