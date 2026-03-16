@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import Optional
 
 from .config import ModelConfig
 
@@ -40,7 +39,7 @@ class MultiHeadLatentAttention(nn.Module):
         self.attn_dropout = nn.Dropout(config.attention_dropout)
 
     def forward(
-        self, x: torch.Tensor, attention_mask: Optional[torch.Tensor] = None
+        self, x: torch.Tensor, attention_mask: torch.Tensor | None = None
     ) -> torch.Tensor:
         batch_size, seq_len, _ = x.shape
 
@@ -91,7 +90,7 @@ class MultiHeadSelfAttention(nn.Module):
         self.attn_dropout = nn.Dropout(config.attention_dropout)
 
     def forward(
-        self, x: torch.Tensor, attention_mask: Optional[torch.Tensor] = None
+        self, x: torch.Tensor, attention_mask: torch.Tensor | None = None
     ) -> torch.Tensor:
         batch_size, seq_len, embed_dim = x.shape
 

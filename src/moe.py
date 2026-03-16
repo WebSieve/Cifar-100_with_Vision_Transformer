@@ -28,7 +28,7 @@ class Router(nn.Module):
 
     def forward(
         self, hidden_states: torch.Tensor
-    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         router_logits = self.gate(hidden_states)
 
         routing_weights, selected_experts = torch.topk(
@@ -81,7 +81,7 @@ class MixtureOfExperts(nn.Module):
 
         self.dropout = nn.Dropout(config.dropout)
 
-    def forward(self, hidden_states: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, hidden_states: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         batch_size, seq_len, embed_dim = hidden_states.shape
 
         hidden_flat = hidden_states.view(-1, embed_dim)

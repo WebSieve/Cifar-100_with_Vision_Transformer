@@ -32,8 +32,8 @@ class TransformerBlock(nn.Module):
         self.dropout = nn.Dropout(config.dropout)
 
     def forward(
-        self, x: torch.Tensor, attention_mask: Optional[torch.Tensor] = None
-    ) -> Tuple[torch.Tensor, Optional[torch.Tensor]]:
+        self, x: torch.Tensor, attention_mask: torch.Tensor | None = None
+    ) -> tuple[torch.Tensor, torch.Tensor | None]:
         residual = x
         x = self.norm1(x)
         x = self.attention(x, attention_mask)
@@ -90,13 +90,13 @@ class VisionTransformer(nn.Module):
 
     def forward(
         self, x: torch.Tensor, return_features: bool = False
-    ) -> Tuple[torch.Tensor, Optional[torch.Tensor]]:
+    ) -> tuple[torch.Tensor, torch.Tensor | None]:
         x = self.patch_embed(x)
 
         if self.pos_embed is not None:
             x = self.pos_embed(x)
 
-        total_aux_loss: Optional[torch.Tensor] = None
+        total_aux_loss: torch.Tensor | None = None
         aux_count = 0
 
         for block in self.blocks:

@@ -33,7 +33,7 @@ def get_transforms(is_training: bool = True, img_size: int = 32) -> transforms.C
 
 def get_cifar100_loaders(
     config: TrainingConfig, img_size: int = 32
-) -> Tuple[DataLoader, DataLoader]:
+) -> tuple[DataLoader, DataLoader]:
     train_transform = get_transforms(is_training=True, img_size=img_size)
     test_transform = get_transforms(is_training=False, img_size=img_size)
 
@@ -77,7 +77,7 @@ class Mixup:
 
     def __call__(
         self, images: torch.Tensor, labels: torch.Tensor
-    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, float]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, float]:
         if self.alpha > 0:
             lam = torch.distributions.Beta(self.alpha, self.alpha).sample().item()
         else:
@@ -97,7 +97,7 @@ class CutMix:
 
     def __call__(
         self, images: torch.Tensor, labels: torch.Tensor
-    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, float]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, float]:
         if self.alpha > 0:
             lam = torch.distributions.Beta(self.alpha, self.alpha).sample().item()
         else:

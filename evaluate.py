@@ -119,7 +119,7 @@ def main():
     print("\nEvaluating...")
     metrics = evaluate(model, test_loader, device)
 
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"  Test Loss:  {metrics['loss']:.4f}")
     print(f"  Test Acc@1: {metrics['acc1']:.2f}%")
     print(f"  Test Acc@5: {metrics['acc5']:.2f}%")
